@@ -14,4 +14,3 @@ variable "jobs" {
     { name = "dispatch", folder = "CI-Pipeline", repo_url = "https://github.com/Bhanudevopss/dispatch" }
   ]
 }
-
