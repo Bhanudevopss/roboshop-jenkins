@@ -15,7 +15,7 @@ resource "jenkins_job" "job" {
   })
 
   lifecycle {
-    ignore_changes = [template]
+    ignore_changes = var.force ? [template] : []
   }
 }
 
