@@ -19,3 +19,15 @@ resource "jenkins_job" "job" {
   }
 }
 
+data "aws_instance" "jenkins" {
+  id = "i-0e8b84b60228d26de"
+}
+
+resource "aws_route53_record" "jenkins" {
+  zone_id = "Z04634692Z9HUU48HQ5JP"
+  name = "jenkins.devopswithbhanu.online"
+  type = "A"
+  ttl = 30
+  records = [data.aws_instance.jenkins.public_ip]
+}
+
