@@ -4,7 +4,6 @@ variable "folders" {
 
 variable "m-jobs" {
   default = [
-    { name = "roboshop", folder = "Infra", repo_url = "https://github.com/Bhanudevopss/roboshop-infra" },
     { name = "frontend", folder = "CI-Pipeline", repo_url = "https://github.com/Bhanudevopss/frontend" },
     { name = "catalogue", folder = "CI-Pipeline", repo_url = "https://github.com/Bhanudevopss/catalogue" },
     { name = "user", folder = "CI-Pipeline", repo_url = "https://github.com/Bhanudevopss/user" },
@@ -16,7 +15,9 @@ variable "m-jobs" {
 }
 
 variable "s-jobs" {
-  default = []
+  default = [
+    { name = "roboshop", folder = "Infra", repo_url = "https://github.com/Bhanudevopss/roboshop-infra" }
+  ]
 }
 
 variable "force" {
