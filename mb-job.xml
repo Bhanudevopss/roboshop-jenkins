@@ -26,7 +26,7 @@
     <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.1071.v1a_188a_562481">
         <data>
             <jenkins.branch.BranchSource>
-                <source class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@1701.v00cc8184df93">
+                <source class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@1703.vd5a_2b_29c6cdc">
                     <id>1f23b0f5-8922-40b7-a394-96da2dd800b4</id>
                     <apiUri>https://api.github.com</apiUri>
                     <credentialsId>GitHub</credentialsId>
@@ -46,6 +46,13 @@
                 <strategy class="jenkins.branch.DefaultBranchPropertyStrategy">
                     <properties class="empty-list"/>
                 </strategy>
+                <buildStrategies>
+                    <jenkins.branch.buildstrategies.basic.BranchBuildStrategyImpl plugin="basic-branch-build-strategies@71.vc1421f89888e"/>
+                    <jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl plugin="basic-branch-build-strategies@71.vc1421f89888e">
+                        <atLeastMillis>-1</atLeastMillis>
+                        <atMostMillis>604800000</atMostMillis>
+                    </jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl>
+                </buildStrategies>
             </jenkins.branch.BranchSource>
         </data>
         <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
